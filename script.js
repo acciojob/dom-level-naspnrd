@@ -1,19 +1,15 @@
-// li.parentElement() = ul.parentElmt = body
+function getDomLevel(element) {
+	let level = 0;
 
-
-const targetLevel = document.getElementById("level");
-
-
-function getDepth(e){
-	let level =0;
-	while(e){
+	while(element) {
 		level++;
-		e = e.parentElement;
+		element = element.parentElement
 	}
-
-	return level;
+	return level
 }
 
+const targetElement = document.getElementById("level");
 
-const depth = getDepth(targetLevel);
-alert(`The level of the element is: ${depth}``);
+const domLevel = getDomLevel(targetElement)
+
+alert(`The level of the element is: ${domLevel}`)
